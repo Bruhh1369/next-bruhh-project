@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 360px;
+    height: content-height;
+    color: white;
+}
+.card-header {
+    border-image: url(./card-header.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    width: 100%;
+    height: 52px;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    font-family: "MinecraftFive";
+}
+.card-main {
+    width: 100%;
+    border-image: url(./card-main.png) 0 2 0 2 fill / 0px 2px 0px 2px;
+    height: content-height;
+    justify-items: center;
+    align-content: center;
+    aspect-ratio: 16/9;
+}
+.card-main img {
+    width: calc(100% - 12px);
+    margin-bottom: 4px;
+    margin-top: 4px;
+    display: block;
+}
+.card-footer {
+    width: 100%;
+    height: 52px;
+    border-image: url(./card-footer.png) 2 2 4 2 fill / 2px 2px 4px 2px;
+    align-content: center;
+    justify-items: center;
+}
+.card-button {
+    height: calc(100% - 8px);
+    width: calc(100% - 8px);
+    text-decoration: none;
+}

@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    /*important*/
+    padding: 0;
+    /*important*/
+}
+@font-face {
+    font-family: "Minecraft";
+    src: url("../../../fonts/Minecraft.otf") format("opentype");
+}
+@font-face {
+    font-family: "MinecraftFive";
+    src: url("../../../fonts/MinecraftFive.ttf") format("truetype");
+}
+@mixin bt-template {
+    image-rendering: pixelated;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: transparent;
+    cursor: pointer;
+}
+.ore-button {
+    color: white;
+    border-image: url(./btn-green.png) 4 4 8 4 fill / 4px 4px 8px 4px;
+    @include bt-template;
+}
+.ore-button:active {
+    border-image: url(./btn-green-active.png) 8 4 4 4 fill / 8px 4px 4px 4px;
+}
+.ore-button-neutral {
+    color: black;
+    border-image: url(./btn-neutral.png) 4 4 8 4 fill / 4px 4px 8px 4px;
+    @include bt-template;
+}
+.ore-button-neutral:active {
+    border-image: url(./btn-neutral-active.png) 8 4 4 4 fill / 8px 4px 4px 4px;
+}
+.ore-button-dark {
+    color: white;
+    border-image: url(./btn-dark.png) 4 4 8 4 fill / 4px 4px 8px 4px;
+    @include bt-template;
+}
+.ore-button-dark:active {
+    border-image: url(./btn-dark-active.png) 8 4 4 4 fill / 8px 4px 4px 4px;
+}
+.button-text {
+    font-size: 1rem;
+    font-family: "Minecraft";
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+    justify-items: center;
+    align-content: center;
+    transform: translateY(4px);
+}
+.ore-button:active, .ore-button-neutral:active, .ore-button-dark:active {
+    .button-text {
+        transform: translateY(8px);
+    }
+}

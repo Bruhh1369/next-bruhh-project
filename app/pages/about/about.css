@@ -1,0 +1,187 @@
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    gap: 30px;
+}
+
+.ts-card,
+.faq-card {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.faq-card-item {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.faq-button {
+    width: 100%;
+    height: fit-content;
+    border-image: url(../../assets/templates/ore-ui/cards/card-header.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    color: white;
+    font-family: "MinecraftFive";
+    cursor: pointer;
+    display: flex;
+}
+
+.faq-button-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: 16px;
+}
+
+.faq-button p {
+    text-align: left;
+    padding: 10px;
+    font-size: smaller;
+}
+
+.faq-description {
+    border-image: url(../../assets/templates/ore-ui/cards/card-footer-bottommost.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    overflow: hidden;
+}
+
+.faq-checkbox {
+    display: none;
+}
+
+.faq-description p {
+    margin: 8px;
+}
+
+.ts-card-header,
+.faq-card-header {
+    border-image: url(../../assets/templates/ore-ui/cards/card-header.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    width: 100%;
+    height: 52px;
+    justify-items: center;
+    align-content: center;
+    font-family: "MinecraftFive";
+}
+
+.faq-card-main {
+    width: 100%;
+    border-image: url(../../assets/templates/ore-ui/cards/card-main.png) 0 2 0 2 fill / 0px 2px 0px 2px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.ts-card-main {
+    width: 100%;
+    border-image: url(../../assets/templates/ore-ui/cards/card-footer-bottommost.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.ts-wrapper {
+    width: 100%;
+}
+
+.ts-wrapper p {
+    padding: 6px 6px 6px 8px;
+    border-image: url(../../assets/templates/ore-ui/cards/card-header.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    font-size: 0.95em;
+}
+
+.ts-renderer {
+    border-image: url(../../assets/templates/ore-ui/cards/card-footer-bottommost.png) 4 4 2 4 fill / 4px 4px 2px 4px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.ts-renderer img {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    margin-right: 6px;
+}
+
+
+.value-1 {
+    background-color: lime;
+    border: 2px solid #4caf50;
+    flex-grow: 1;
+    height: 28px;
+}
+
+
+.value-0 {
+    background: rgba(180, 180, 180, 0.3);
+    border: 2px dashed #bdbdbd;
+    flex-grow: 1;
+    height: 28px;
+}
+
+.profile-card {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    color: white;
+}
+
+.profile-card-main {
+    width: fit-content;
+    border-image: url(../../assets/templates/ore-ui/cards/card-main.png) 0 2 0 2 fill / 0px 2px 0px 2px;
+    height: content-height;
+    justify-items: center;
+    align-content: center;
+}
+
+.profile-card-main img {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 20px;
+}
+
+.profile-card-footer {
+    width: 100%;
+    border-image: url(../../assets/templates/ore-ui/cards/card-footer.png) 2 2 4 2 fill / 2px 2px 4px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.profile-card-footer p {
+    width: 100%;
+    flex-wrap: wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    hyphens: auto;
+}
+
+@media (max-width: 628px) {
+    .profile-card-main {
+        width: 100%;
+    }
+
+    .profile-card-main img {
+        margin: 20px 0 20px 0;
+    }
+
+    .profile-card {
+        flex-direction: column;
+    }
+}

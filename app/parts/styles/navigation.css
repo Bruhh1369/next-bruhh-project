@@ -1,0 +1,164 @@
+nav {
+    height: 60px;
+    background-color: black;
+    display: flex;
+    z-index: 10;
+    width: 100vw;
+}
+
+.label-wrapper {
+    background-color: blue;
+    display: flex;
+}
+
+.nav-button {
+    color: white;
+    height: 100%;
+    width: 100px;
+    display: block;
+}
+
+.label-wrapper .nav-button:hover {
+    border-image: url(../../assets/templates/ore-ui/buttons/btn-dark.png) 4 4 8 4 fill / 4px 4px 8px 4px;
+}
+
+.label-wrapper .nav-button:active {
+    border-image: url(../../assets/templates/ore-ui/buttons/btn-dark.png) 4 4 8 4 fill / 4px 4px 8px 4px;
+}
+
+#close-menu {
+    display: none;
+}
+
+.menu-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+}
+
+nav h1 {
+    font-family: 'MinecraftFive';
+    font-size: 14pt;
+    color: white;
+    align-content: center;
+    padding-left: 14px;
+    margin-right: auto;
+}
+
+nav input[type="radio"] {
+    display: none;
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+#home-radio:checked~.home-button,
+#about-radio:checked~.about-button,
+#contact-radio:checked~.contact-button {
+    border-image: url(../../assets/templates/ore-ui/buttons/btn-dark-active.png) 8 4 4 4 fill / 8px 4px 4px 4px;
+}
+
+.home-button-text,
+.contact-button-text,
+.about-button-text {
+    font-family: "Minecraft";
+    width: calc(100% - 8px);
+    height: calc(100% - 12px);
+    justify-items: center;
+    align-content: center;
+    transform: translateY(4px);
+}
+
+#home-radio:checked~.home-button>.home-button-text,
+#about-radio:checked~.about-button>.about-button-text,
+#contact-radio:checked~.contact-button>.contact-button-text {
+    transform: translateY(8px);
+}
+
+
+@media (max-width: 628px) {
+    .label-wrapper {
+        flex-direction: column;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 72%;
+        height: 100vh;
+        z-index: 999;
+        align-items: flex-start;
+        transition: 350ms ease;
+    }
+
+    #show-navbar:checked~.label-wrapper {
+        right: 0;
+    }
+
+    #nav-overlay {
+        display: block;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        z-index: 998;
+        display: none;
+    }
+
+    #show-navbar:checked~#nav-overlay {
+        display: block;
+    }
+
+    #close-menu {
+        display: block;
+        margin-left: auto;
+        margin-top: 4px;
+    }
+
+    .home-button-text>div {
+        width: 100%;
+    }
+
+    .nav-button {
+        height: 60px;
+        width: 100%;
+        padding-left: 25px;
+        box-sizing: border-box;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .home-button-text,
+    .contact-button-text,
+    .about-button-text {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-button-text>div {
+        display: flex;
+        align-items: center;
+    }
+
+    .label-wrapper .nav-button {
+        border-image: url(../../assets/templates/ore-ui/buttons/btn-dark-flat.png) 4 4 4 4 fill / 4px 4px 4px 4px;
+    }
+
+    .label-wrapper .nav-button:hover {
+        border-image: url(../../assets/templates/ore-ui/buttons/btn-dark-flat.png) 4 4 4 4 fill / 4px 4px 4px 4px;
+    }
+
+    #home-radio:checked~.home-button,
+    #about-radio:checked~.about-button,
+    #contact-radio:checked~.contact-button {
+        border-image: url(../../assets/templates/ore-ui/buttons/btn-dark-flat.png) 4 4 4 4 fill / 4px 4px 4px 4px;
+    }
+
+    #home-radio:checked~.home-button>.home-button-text,
+    #about-radio:checked~.about-button>.about-button-text,
+    #contact-radio:checked~.contact-button>.contact-button-text {
+        transform: translateY(4px);
+    }
+}
