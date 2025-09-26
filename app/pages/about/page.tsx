@@ -138,7 +138,7 @@ const About = () => {
 
             <div className="faq-card">
                 <div className="faq-card-header">
-                    <p>FAQ's</p>
+                    <p>FAQ&apos;s</p>
                 </div>
                 <div className="faq-card-main">
                     {faqData.map(faq => (

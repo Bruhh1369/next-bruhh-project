@@ -26,7 +26,7 @@ const Navigation = () => {
 
     return (
         <nav>
-            <h1>Bruhh's Project</h1>
+            <h1>Bruhh&apos;s Project</h1>
             <input
                 type="checkbox"
                 id="show-navbar"

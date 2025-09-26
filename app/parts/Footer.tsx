@@ -7,7 +7,7 @@ const Footer = () => {
                 <h2>@</h2>
                 <div className="footer-text">
                     <p id="bleh">
-                        Bruhh's Project
+                        Bruhh&apos;s Project
                     </p>
                     <hr color="white" id="huh" />
                     <p>
