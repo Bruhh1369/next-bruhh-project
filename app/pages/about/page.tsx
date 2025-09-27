@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import './about.css'
+import Img from '@/app/assets/custom-components/Image'
 
 // ----- ProfileCard -----
 interface ProfileCardProps {
@@ -12,7 +13,7 @@ const ProfileCard = ({ description }: ProfileCardProps) => {
     return (
         <div className="profile-card">
             <div className="profile-card-main">
-                <img
+                <Img
                     src="https://r2.mcpedl.com/users/967795/d44e5a9bb55b9934557d4c27328efb44.png"
                     alt="pfp"
                 />
@@ -60,7 +61,10 @@ const TsWrapper = ({ name = "Unknown", rank = "Beginner" }: TsWrapperProps) => {
         <div className="ts-wrapper">
             <p>{name} - {rank}</p>
             <div className="ts-renderer">
-                <img src={`/svgs/${name}.svg`} alt={name} className="ts-icon" />
+                <Img
+                    src={`/svgs/${name}.svg`}
+                    alt={name}
+                />
                 <TsValues rank={rank} />
             </div>
         </div>

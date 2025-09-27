@@ -5,46 +5,32 @@ interface ImgProps {
     alt: string;
     fullSize?: boolean;
     imgWidth?: number;
-    imgHeigth?: number;
+    imgHeight?: number;
 }
 
-const Img = ({ src, alt, fullSize = false, imgWidth = 300, imgHeigth = 300 }: ImgProps) => {
-
-    const gif = src.endsWith('.gif');
-
-    if (gif) return (
-        <div className="img">
-            {fullSize ? <Image
-                src={src}
-                alt={alt}
-                fill
-                unoptimized
-            /> :
-                <Image
-                    src={src}
-                    alt={alt}
-                    width={imgWidth}
-                    height={imgHeigth}
-                    unoptimized
-                />}
-        </div>
-    )
+const Img = ({ src, alt, fullSize = false, imgWidth = 300, imgHeight = 300 }: ImgProps) => {
+    const gif = typeof src === "string" && src.toLowerCase().endsWith(".gif");
 
     return (
-        <div className="img">
-            {fullSize ? <Image
-                src={src}
-                alt={alt}
-                fill
-            /> :
+        <div className="img" style={{position: "relative"}}>
+            {fullSize ? (
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    unoptimized={gif}
+                />
+            ) : (
                 <Image
                     src={src}
                     alt={alt}
                     width={imgWidth}
-                    height={imgHeigth}
-                />}
+                    height={imgHeight}
+                    unoptimized={gif}
+                />
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default Img
+export default Img;

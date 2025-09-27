@@ -142,9 +142,10 @@
 .profile-card-main {
     width: fit-content;
     border-image: url(../../assets/templates/ore-ui/cards/card-main.png) 0 2 0 2 fill / 0px 2px 0px 2px;
-    height: content-height;
-    justify-items: center;
-    align-content: center;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-card-main img {
