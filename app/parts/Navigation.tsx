@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import './styles/navigation.css';
 import { DarkButton } from '../assets/templates/ore-ui/buttons/ore-ui-button';
@@ -10,6 +10,11 @@ const Navigation = () => {
     const [selected, setSelected] = useState("home")
     
     const navigateTo = useRouter()
+
+    useEffect(() => {
+        navigateTo.prefetch("/pages/about")
+        navigateTo.prefetch("/pages/contact")
+    }, [navigateTo])
 
     const toHome = () => {
         navigateTo.push("/")

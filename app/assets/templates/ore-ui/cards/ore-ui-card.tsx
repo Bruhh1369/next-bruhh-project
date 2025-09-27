@@ -4,7 +4,7 @@ import { Post } from '../../../../types/Post';
 import { GreenButton } from "../buttons/ore-ui-button";
 import React from "react";
 import "./ore-ui-card.css";
-
+import Img from '../../../custom-components/Image'
 interface PostCardProps {
     postlist: Post[];
 }
@@ -20,10 +20,10 @@ export const PostCard: React.FC<PostCardProps> = ({ postlist }) => {
                 <p>{e.title}</p>
             </div>
             <div className="card-main">
-                <img
+                <Img 
                     src={e.image}
                     alt={e.title}
-
+                    fullSize={true}
                 />
             </div>
             <div className="card-footer">

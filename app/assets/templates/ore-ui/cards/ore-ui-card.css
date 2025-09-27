@@ -29,11 +29,11 @@ body {
     align-content: center;
     aspect-ratio: 16/9;
 }
-.card-main img {
+.card-main .img {
+    position: relative;
     width: calc(100% - 12px);
-    margin-bottom: 4px;
-    margin-top: 4px;
-    display: block;
+    height: 100%;
+    margin: 4px 0;
 }
 .card-footer {
     width: 100%;
