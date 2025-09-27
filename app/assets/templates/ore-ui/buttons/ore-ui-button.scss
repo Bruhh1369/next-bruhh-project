@@ -49,8 +49,9 @@
     font-family: "Minecraft";
     width: calc(100% - 8px);
     height: calc(100% - 12px);
-    justify-items: center;
-    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transform: translateY(4px);
 }
 .ore-button:active, .ore-button-neutral:active, .ore-button-dark:active {

@@ -60,35 +60,37 @@ const Homepage = () => {
     return (
         <>
             <div className="home-heading">
-                {
-                    currentPage <= 1 ? <div className="ore-button empty"></div> :
-                        <GreenButton
-                            childElement={<p>prev</p>}
-                            onClick={() => {
-                                setCurrentPage(prev => prev - 1)
-                                setPostData(null)
-                                setSearchValue("")
-                            }}
-                        />
-                }
-                <input
-                    type="text"
-                    id="searchPost"
-                    value={searchValue}
-                    onChange={e => setSearchValue(e.target.value)}
-                    placeholder="Search posts..."
-                />
-                {
-                    postCount < 10 ? <div className="ore-button empty"></div> :
-                        <GreenButton
-                            childElement={<p>next</p>}
-                            onClick={() => {
-                                setCurrentPage(prev => prev + 1)
-                                setPostData(null)
-                                setSearchValue("")
-                            }}
-                        />
-                }
+                <div className="post-input-wrapper">
+                    {
+                        currentPage <= 1 ? <div className="ore-button empty"></div> :
+                            <GreenButton
+                                childElement={<p>prev</p>}
+                                onClick={() => {
+                                    setCurrentPage(prev => prev - 1)
+                                    setPostData(null)
+                                    setSearchValue("")
+                                }}
+                            />
+                    }
+                    <input
+                        type="text"
+                        id="searchPost"
+                        value={searchValue}
+                        onChange={e => setSearchValue(e.target.value)}
+                        placeholder="Search posts..."
+                    />
+                    {
+                        postCount < 10 ? <div className="ore-button empty"></div> :
+                            <GreenButton
+                                childElement={<p>next</p>}
+                                onClick={() => {
+                                    setCurrentPage(prev => prev + 1)
+                                    setPostData(null)
+                                    setSearchValue("")
+                                }}
+                            />
+                    }
+                </div>
             </div>
             <div className="posts-wrapper">
                 {
