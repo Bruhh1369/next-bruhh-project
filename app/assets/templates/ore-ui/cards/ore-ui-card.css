@@ -22,6 +22,9 @@ body {
     text-align: center;
     font-family: "MinecraftFive";
 }
+.card-header p {
+    margin: auto;
+}
 .card-main {
     width: 100%;
     border-image: url(./card-main.png) 0 2 0 2 fill / 0px 2px 0px 2px;

@@ -64,8 +64,9 @@
     border-image: url(../../assets/templates/ore-ui/cards/card-header.png) 4 4 2 4 fill / 4px 4px 2px 4px;
     width: 100%;
     height: 52px;
-    justify-items: center;
-    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "MinecraftFive";
 }
 
