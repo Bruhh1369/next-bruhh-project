@@ -2,9 +2,48 @@
 
 import { GreenButton } from "../../assets/templates/ore-ui/buttons/ore-ui-button"
 import "./contact.css"
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react"
 
 const Contact = () => {
+
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const onFormSubmitted = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const form = formRef.current;
+        if (!form) return;
+
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        try {
+            const res = await fetch("../../api/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, message }),
+            });
+            if (!res.ok) throw new Error("Failed to send email");
+            alert("✅ Pesan berhasil dikirim!");
+            form.reset();
+        } catch (error) {
+            alert("❌ Gagal mengirim pesan");
+            console.error(error);
+        }
+    };
+
+    const [submitDelayed, setSubmitDelayed] = useState<boolean>(false)
+
+    function submitDelay(): void {
+        setTimeout(() => {
+            setSubmitDelayed(true)
+            setTimeout(() => {
+                setSubmitDelayed(false)
+            }, 3000)
+        }, 100);
+    }
+
     return (
         <div className="contact-page">
             <div className="contact-card">
@@ -13,13 +52,9 @@ const Contact = () => {
                 </div>
                 <div className="contact-card-content">
                     <form
-                        action="https://formsubmit.co/bruhh136969@gmail.com"
-                        method="POST"
+                        ref={formRef}
+                        onSubmit={onFormSubmitted}
                     >
-                        <input type="hidden" name="_captcha" value="false" />
-                        <input type="hidden" name="_template" value="table" />
-                        <input type="hidden" name="_autoresponse" value="Submitted!" />
-
                         <div className="input-wrapper">
                             <label htmlFor="name">Name</label>
                             <input type="text" name="name" id="name" required />
@@ -42,11 +77,12 @@ const Contact = () => {
                             ></textarea>
                         </div>
                         <div className="input-wrapper">
-                            <GreenButton
+                            {submitDelayed ? <div></div> :<GreenButton
                                 tagName="button"
                                 buttonType="submit"
                                 childElement={<p>Submit</p>}
-                            />
+                                onClick={submitDelay}
+                            />}
                         </div>
                     </form>
                 </div>

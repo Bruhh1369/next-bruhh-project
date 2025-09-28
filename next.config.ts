@@ -2,7 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['media.forgecdn.net','r2.mcpedl.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.forgecdn.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'r2.mcpedl.com',
+        pathname: '/**',
+      },
+    ],
   },
   /* config options here */
 };

@@ -132,11 +132,9 @@ const About = () => {
                     <p>Tech Stack</p>
                 </div>
                 <div className="ts-card-main">
-                    <TsWrapper name="JSON UI" rank="Advanced" />
                     <TsWrapper name="CSS" rank="Advanced" />
                     <TsWrapper name="JavaScript" rank="Intermediate" />
                     <TsWrapper name="React" rank="Intermediate" />
-                    <TsWrapper name="C++" rank="Beginner" />
                 </div>
             </div>
 
