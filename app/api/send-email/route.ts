@@ -34,7 +34,7 @@ export async function POST(req: Request) {
           </head>
           <body style="margin:0; padding:0; font-family: Arial, sans-serif; background: #f9f9f9; color: #333;">
             <div style="max-width:600px; margin:20px auto; padding:20px; border-radius:12px; background:#ffffff; color:#333;"
-                 class="email-wrapper">
+              class="email-wrapper">
               <h2 style="color:#444;">📬 New Contact Form Submission</h2>
               <p><strong>Name:</strong> ${name}</p>
               <p><strong>Email:</strong> ${email}</p>

@@ -19,6 +19,7 @@ const Img = ({ src, alt, fullSize = false, imgWidth = 300, imgHeight = 300 }: Im
                     alt={alt}
                     fill
                     unoptimized={gif}
+                    priority={gif}
                 />
             ) : (
                 <Image
@@ -27,6 +28,7 @@ const Img = ({ src, alt, fullSize = false, imgWidth = 300, imgHeight = 300 }: Im
                     width={imgWidth}
                     height={imgHeight}
                     unoptimized={gif}
+                    priority={gif}
                 />
             )}
         </div>

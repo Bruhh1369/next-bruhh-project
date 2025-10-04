@@ -4,6 +4,12 @@ nav {
     display: flex;
     z-index: 10;
     width: 100vw;
+    position: fixed;
+}
+
+.padder {
+    height: 60px;
+    width: 100%;
 }
 
 .label-wrapper {
@@ -57,11 +63,13 @@ nav input[type="checkbox"] {
 
 #home-radio:checked~.home-button,
 #about-radio:checked~.about-button,
+#tools-radio:checked~.tools-button,
 #contact-radio:checked~.contact-button {
     border-image: url(../../assets/templates/ore-ui/buttons/btn-dark-active.png) 8 4 4 4 fill / 8px 4px 4px 4px;
 }
 
 .home-button-text,
+.tools-button-text,
 .contact-button-text,
 .about-button-text {
     font-family: "Minecraft";
@@ -74,12 +82,13 @@ nav input[type="checkbox"] {
 
 #home-radio:checked~.home-button>.home-button-text,
 #about-radio:checked~.about-button>.about-button-text,
+#tools-radio:checked~.tools-button>.tools-button-text,
 #contact-radio:checked~.contact-button>.contact-button-text {
     transform: translateY(8px);
 }
 
 
-@media (max-width: 628px) {
+@media (max-width: 728px) {
     .label-wrapper {
         flex-direction: column;
         position: fixed;
@@ -131,6 +140,7 @@ nav input[type="checkbox"] {
     }
 
     .home-button-text,
+    .tools-button-text,
     .contact-button-text,
     .about-button-text {
         display: flex;
@@ -151,6 +161,7 @@ nav input[type="checkbox"] {
     }
 
     #home-radio:checked~.home-button,
+    #tools-radio:checked~.tools-button,
     #about-radio:checked~.about-button,
     #contact-radio:checked~.contact-button {
         border-image: url(../../assets/templates/ore-ui/buttons/btn-dark-flat.png) 4 4 4 4 fill / 4px 4px 4px 4px;
@@ -158,6 +169,7 @@ nav input[type="checkbox"] {
 
     #home-radio:checked~.home-button>.home-button-text,
     #about-radio:checked~.about-button>.about-button-text,
+    #tools-radio:checked~.tools-button>.tools-button-text,
     #contact-radio:checked~.contact-button>.contact-button-text {
         transform: translateY(4px);
     }

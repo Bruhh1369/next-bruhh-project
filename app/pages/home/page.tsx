@@ -55,8 +55,6 @@ const Homepage = () => {
     }, [currentPage])
 
     const postCount = postData?.data?.length ?? 0
-    console.log(postCount)
-
     return (
         <>
             <div className="home-heading">

@@ -2,7 +2,7 @@
 
 import { GreenButton } from "../../assets/templates/ore-ui/buttons/ore-ui-button"
 import "./contact.css"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 
 const Contact = () => {
 
@@ -27,6 +27,8 @@ const Contact = () => {
             if (!res.ok) throw new Error("Failed to send email");
             alert("✅ Pesan berhasil dikirim!");
             form.reset();
+            const textarea = form.querySelector<HTMLTextAreaElement>("#message");
+            if (textarea) textarea.style.height = "70px";
         } catch (error) {
             alert("❌ Gagal mengirim pesan");
             console.error(error);
@@ -35,7 +37,7 @@ const Contact = () => {
 
     const [submitDelayed, setSubmitDelayed] = useState<boolean>(false)
 
-    function submitDelay(): void {
+    function handleSubmit(): void {
         setTimeout(() => {
             setSubmitDelayed(true)
             setTimeout(() => {
@@ -71,17 +73,17 @@ const Contact = () => {
                                 required
                                 onInput={e => {
                                     const target = e.target as HTMLTextAreaElement;
-                                    target.style.height = "auto";
+                                    target.style.height = 'auto';
                                     target.style.height = target.scrollHeight + "px";
                                 }}
                             ></textarea>
                         </div>
                         <div className="input-wrapper">
-                            {submitDelayed ? <div></div> :<GreenButton
+                            {submitDelayed ? <div></div> : <GreenButton
                                 tagName="button"
                                 buttonType="submit"
                                 childElement={<p>Submit</p>}
-                                onClick={submitDelay}
+                                onClick={handleSubmit}
                             />}
                         </div>
                     </form>

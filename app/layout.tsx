@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "./parts/Navigation";
 import Footer from "./parts/Footer";
+import { GreenButton } from "./assets/templates/ore-ui/buttons/ore-ui-button";
 
 export const metadata: Metadata = {
   title: "Bruhh Project",
