@@ -23,7 +23,7 @@ const Tools = () => {
                     <p>{e.name}</p>
                 </div>
                 <div className="card-main">
-                    <iframe src=""></iframe>
+                    {/* <iframe src=""></iframe> */}
                 </div>
                 <div className="card-footer">
                     <Link href={e.destination}>Go</Link>
