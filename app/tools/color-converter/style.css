@@ -1,0 +1,49 @@
+.hex-color-convert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 83.7vh;
+}
+.color-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color-main > input[type="color"] {
+    width: 10rem;
+    height: 10rem;
+    border: none;
+    cursor: pointer;
+}
+.color-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    height: auto;
+    padding: 1rem 0;
+}
+.color-footer > input {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.final-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 80%;
+}
+.final-result > input {
+    width: fill;
+    padding: 0.5rem;
+}
+.final-result > button {
+    width: 5rem;
+    padding: 0.5rem;
+}

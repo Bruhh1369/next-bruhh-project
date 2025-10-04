@@ -1,4 +1,3 @@
-import Img from "@/app/assets/custom-components/Image"
 import '../../assets/templates/ore-ui/cards/ore-ui-card.css'
 import './tools.css'
 import Link from "next/link"
@@ -6,7 +5,7 @@ import Link from "next/link"
 const availableTools = [
     {
         "name": "HEX To RGb Float",
-        "destination": "/tools/hex-to-rgb"
+        "destination": "/tools/color-converter"
     },
     {
         "name": "HEX To RGb Float",
