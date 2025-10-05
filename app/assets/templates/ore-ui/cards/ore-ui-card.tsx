@@ -1,12 +1,33 @@
 'use client';
 
-import { Post } from '../../../../types/Post';
-import { GreenButton } from "../buttons/ore-ui-button";
-import React from "react";
-import "./ore-ui-card.css";
+import { Post } from '../../../../types/Post'
+import { GreenButton } from "../buttons/ore-ui-button"
+import React from "react"
+import "./ore-ui-card.css"
 import Img from '../../../custom-components/Image'
+import clsx from 'clsx'
+
+interface CardProps {
+    titleContent: React.ReactNode;
+    mainContent: React.ReactNode;
+    footerContent: React.ReactNode;
+}
 interface PostCardProps {
     postlist: Post[];
+}
+
+export const Card = ({ titleContent, mainContent, footerContent }: CardProps) => {
+    <div className="card">
+        <div className="card-header">
+            {titleContent}
+        </div>
+        <div className="card-maim">
+            {mainContent}
+        </div>
+        <div className="card-footer">
+            {footerContent}
+        </div>
+    </div>
 }
 
 export const PostCard: React.FC<PostCardProps> = ({ postlist }) => {
@@ -20,7 +41,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postlist }) => {
                 <p>{e.title}</p>
             </div>
             <div className="card-main">
-                <Img 
+                <Img
                     src={e.image}
                     alt={e.title}
                     fullSize={true}

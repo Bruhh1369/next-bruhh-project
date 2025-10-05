@@ -21,6 +21,7 @@ body {
     align-items: center;
     text-align: center;
     font-family: "MinecraftFive";
+    image-rendering: pixelated;
 }
 .card-header p {
     margin: auto;

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import '../../assets/templates/ore-ui/cards/ore-ui-card.css'
+import '../../assets/templates/ore-ui/buttons/ore-ui-button.scss'
 import './style.css'
 
 const HexColorConvert = () => {
@@ -37,13 +38,13 @@ const HexColorConvert = () => {
                         id="colorInput" onChange={e => {
                             const value = "#" + e.target.value
                             setColor(value)
-                        }
+                            }
                         }
                         placeholder="Enter HEX code. E.g. ff5733"
                     />
                     <div className="final-result">
                         <input type="text" id="colorResult" value={convertedColor()} readOnly />
-                        <button
+                        <button className="ore-button"
                             id="copyColor"
                             onClick={() => {
                                 const result = document.getElementById('colorResult') as HTMLInputElement
@@ -52,7 +53,7 @@ const HexColorConvert = () => {
                                 }
                             }}
                         >
-                            Copy
+                            <p className="button-text">Copy</p>
                         </button>
                     </div>
                 </div>
