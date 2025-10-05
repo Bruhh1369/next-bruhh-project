@@ -2,15 +2,16 @@
     font-family: "Minecraft";
     src: url("./assets/fonts/Minecraft.otf") format("opentype");
 }
+
 @font-face {
     font-family: "MinecraftFive";
     src: url("./assets/fonts/MinecraftFive.ttf") format("truetype");
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -20,6 +21,7 @@ html {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
 body {
     background: url('./assets/webbg.png') no-repeat center fixed;
     background-size: cover;
@@ -30,13 +32,14 @@ body {
 }
 
 .overlay {
-    background-color: rgba(0,0,0,0.45);
+    background-color: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
     width: 100vw;
     height: 100vh;
     position: fixed;
     z-index: -1;
 }
+
 .container {
     min-height: 100vh;
     min-width: 100vw;

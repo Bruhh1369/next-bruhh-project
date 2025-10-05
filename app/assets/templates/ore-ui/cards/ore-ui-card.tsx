@@ -1,59 +1,49 @@
-'use client';
+'use client'
 
+import { PropsWithChildren } from 'react'
 import { Post } from '../../../../types/Post'
-import { GreenButton } from "../buttons/ore-ui-button"
-import React from "react"
-import "./ore-ui-card.css"
+import { GreenButton } from '../buttons/ore-ui-button'
 import Img from '../../../custom-components/Image'
-import clsx from 'clsx'
+import './ore-ui-card.css'
 
-interface CardProps {
-    titleContent: React.ReactNode;
-    mainContent: React.ReactNode;
-    footerContent: React.ReactNode;
+interface SectionProps {
+    className?: string
+    variant?: 'card' | 'header' | 'main' | 'footer'
 }
+
 interface PostCardProps {
-    postlist: Post[];
+    postlist: Post[]
 }
 
-export const Card = ({ titleContent, mainContent, footerContent }: CardProps) => {
-    <div className="card">
-        <div className="card-header">
-            {titleContent}
-        </div>
-        <div className="card-maim">
-            {mainContent}
-        </div>
-        <div className="card-footer">
-            {footerContent}
-        </div>
+const CardSection = ({ children, className = '', variant = 'card' }: PropsWithChildren<SectionProps>) => (
+    <div className={`card${variant !== 'card' ? `-${variant}` : ''} ${className}`.trim()}>
+        {children}
     </div>
-}
+)
+
+export const Card = (p: PropsWithChildren<SectionProps>) => <CardSection {...p} variant="card" />
+export const CardHeader = (p: PropsWithChildren<SectionProps>) => <CardSection {...p} variant="header" />
+export const CardMain = (p: PropsWithChildren<SectionProps>) => <CardSection {...p} variant="main" />
+export const CardFooter = (p: PropsWithChildren<SectionProps>) => <CardSection {...p} variant="footer" />
 
 export const PostCard: React.FC<PostCardProps> = ({ postlist }) => {
-
-    if (!postlist || postlist.length === 0) return <p style={{ color: "white" }}>No posts available.</p>;
-
+    if (!postlist?.length) return <p style={{ color: 'white' }}>No posts available.</p>
 
     return postlist.map((e, i) => (
-        <div key={i} className="card">
-            <div className="card-header">
+        <Card key={i}>
+            <CardHeader>
                 <p>{e.title}</p>
-            </div>
-            <div className="card-main">
-                <Img
-                    src={e.image}
-                    alt={e.title}
-                    fullSize={true}
-                />
-            </div>
-            <div className="card-footer">
+            </CardHeader>
+            <CardMain>
+                <Img src={e.image} alt={e.title} fullSize />
+            </CardMain>
+            <CardFooter>
                 <GreenButton
                     hyperLink={`https://mcpedl.com/${e.slug}`}
                     secondClass="card-button"
                     childElement={<p>Learn more...</p>}
                 />
-            </div>
-        </div>
+            </CardFooter>
+        </Card>
     ))
-};
+}

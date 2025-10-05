@@ -4,6 +4,7 @@ import { useState } from 'react'
 import '../../assets/templates/ore-ui/cards/ore-ui-card.css'
 import '../../assets/templates/ore-ui/buttons/ore-ui-button.scss'
 import './style.css'
+import { Card, CardFooter, CardHeader, CardMain } from '@/app/assets/templates/ore-ui/cards/ore-ui-card'
 
 const HexColorConvert = () => {
 
@@ -25,20 +26,20 @@ const HexColorConvert = () => {
 
     return (
         <div className="hex-color-convert">
-            <div className="card">
-                <div className="card-header">
-                    <p>HEX To RGB Float</p>
-                </div>
-                <div className="card-main color-main">
+            <Card>
+                <CardHeader>
+                    <p>HEX to RGB Float</p>
+                </CardHeader>
+                <CardMain className="color-main">
                     <input type="color" id="colorInputBox" disabled value={color} />
-                </div>
-                <div className="card-footer color-footer">
+                </CardMain>
+                <CardFooter className="color-footer">
                     <input
                         type="text"
                         id="colorInput" onChange={e => {
                             const value = "#" + e.target.value
                             setColor(value)
-                            }
+                        }
                         }
                         placeholder="Enter HEX code. E.g. ff5733"
                     />
@@ -56,8 +57,8 @@ const HexColorConvert = () => {
                             <p className="button-text">Copy</p>
                         </button>
                     </div>
-                </div>
-            </div>
+                </CardFooter>
+            </Card>
         </div>
     )
 }
